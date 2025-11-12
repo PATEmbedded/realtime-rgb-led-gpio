@@ -1,0 +1,24 @@
+[Unit]
+Description=Start PAT RGB Driver on boot and keep it alive
+After=basic.target
+StartLimitIntervalSec=0
+
+[Service]
+ExecStartPre=/bin/sleep 7
+ExecStart=/drivers/rgb/pat_rgb_driver
+WorkingDirectory=/drivers/rgb
+
+Restart=always
+RestartSec=10
+
+Nice=-15
+CPUSchedulingPolicy=rr
+CPUSchedulingPriority=93
+
+StandardOutput=journal
+StandardError=journal
+
+User=root
+
+[Install]
+WantedBy=multi-user.target

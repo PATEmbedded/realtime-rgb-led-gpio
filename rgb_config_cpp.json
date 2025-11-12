@@ -1,0 +1,16 @@
+{
+    "request": {
+        "blue": 255,
+        "command": "indicate",
+        "green": 0,
+        "red": 0,
+        "updated": "2025-08-13T12:21:40"
+    },
+    "response": {
+        "blue": 255,
+        "command": "indicate",
+        "green": 0,
+        "red": 0,
+        "updated": "2025-07-13T12:32:10"
+    }
+}

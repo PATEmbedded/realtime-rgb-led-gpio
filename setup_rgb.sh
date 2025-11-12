@@ -1,0 +1,21 @@
+#!/bin/bash
+
+source "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/../../script/utils.sh"
+DIRECTORY_PATH="/root/vertical_drivers/drivers/rgb"
+HEX_FILE="pat_rgb_driver"
+CPP_FILE="pat_rgb.cpp"
+SERVICE_FILE="pat_rgb.service"
+
+#---------------------------------------------------------------------------------------------------------------
+
+compile_cpp "$DIRECTORY_PATH/$CPP_FILE" "$DIRECTORY_PATH/$HEX_FILE"
+
+chmod +x "$DIRECTORY_PATH/$HEX_FILE"
+
+
+install_and_restart_service "$DIRECTORY_PATH" "$HEX_FILE" "$SERVICE_FILE"
+# sleep 5 
+# ps aux | grep 'pat_'
+# cleanup_files "$DIRECTORY_PATH"  cpp h txt 
+
+#---------------------------------------------------------------------------------------------------------------
